@@ -13,3 +13,15 @@ def test_health():
 
     assert response.status_code == 200
     assert response.json == {"status": "ok"}
+
+
+def test_info():
+    client = app.test_client()
+
+    response = client.get("/info")
+
+    assert response.status_code == 200
+    assert response.json == {
+        "name": "python-ci-cd-demo",
+        "version": "1.0.0"
+    }
