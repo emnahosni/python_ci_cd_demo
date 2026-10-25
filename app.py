@@ -8,6 +8,13 @@ def home():
 @app.route("/health")
 def health():
     return {"status": "ok"}
+@app.route("/info")
+def info():
+    return{
+        "name": "python-ci-cd-demo",
+        "version": "1.0.0"
+        }
+            
 
 
 if __name__ == "__main__":
